@@ -1,0 +1,120 @@
+* { box-sizing: border-box; }
+:root {
+  --cream: #ffe7c7;
+  --rose: #f5a0a0;
+  --gold: #e7b879;
+  --dark: #1b0906;
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; min-height: 100vh; color: var(--cream); overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at 76% 45%, rgba(119, 51, 20, .38), transparent 40%),
+    radial-gradient(ellipse at 15% 15%, rgba(92, 39, 17, .42), transparent 36%),
+    linear-gradient(115deg, #1a0906 0%, #32130b 54%, #140705 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .17;
+  background-image: radial-gradient(#ffd99b 1px, transparent 1.5px);
+  background-size: 53px 61px; mask-image: linear-gradient(90deg, black, transparent 78%);
+}
+.ambient { position: fixed; border-radius: 50%; filter: blur(1px); pointer-events: none; background: #ffb04c; box-shadow: 0 0 24px 8px #b85c22; opacity: .8; }
+.ambient-one { width: 19px; height: 19px; top: 10%; left: 2%; }
+.ambient-two { width: 25px; height: 25px; top: 4%; left: 47%; }
+.page {
+  width: min(1500px, 100%); min-height: 100vh; margin: 0 auto; padding: 42px 4.5%;
+  display: grid; grid-template-columns: 1fr 1.03fr; gap: clamp(25px, 4vw, 65px); align-items: center;
+}
+.copy-panel { position: relative; z-index: 2; text-align: center; padding: 15px 0; }
+.eyebrow { letter-spacing: .48em; font-size: clamp(10px, 1.25vw, 17px); margin-bottom: 4px; color: #f6d8ad; }
+.eyebrow span { color: #d8786c; letter-spacing: 0; padding: 0 9px; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(64px, 8.1vw, 118px); line-height: .95; font-weight: 500; margin: 14px 0 8px; letter-spacing: -.045em; text-shadow: 0 4px 24px #a0442b30; }
+.title-heart { color: #e87879; font-family: 'Dancing Script', cursive; font-size: .65em; display: inline-block; transform: rotate(-15deg); margin-left: 8px; }
+.subtitle { font-family: 'Dancing Script', cursive; font-size: clamp(24px, 3vw, 39px); margin: 13px 0 19px; color: #f4cda9; }
+.ornament { display: flex; align-items: center; justify-content: center; gap: 17px; margin: 20px 0 22px; color: #ffb2a1; }
+.ornament span { width: 62px; height: 1px; background: linear-gradient(90deg, transparent, #dba36c); position: relative; }
+.ornament span:last-child { transform: rotate(180deg); }
+.ornament span::after { content: "✧"; position: absolute; right: 0; top: -9px; font-size: 12px; }
+.ornament b { font-size: 24px; font-weight: 400; text-shadow: 0 0 12px #f36b59; }
+.intro { font-size: clamp(13px, 1.35vw, 18px); line-height: 1.85; margin: 0 auto 27px; color: #ffecd5; font-weight: 300; }
+.promise-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 0 auto 28px; }
+.promise { min-width: 0; }
+.icon { width: clamp(48px, 6vw, 76px); height: clamp(48px, 6vw, 76px); border: 1px solid #dcae7960; border-radius: 50%; margin: 0 auto 11px; display: grid; place-items: center; font-size: clamp(25px, 3vw, 38px); color: #ffdfb2; text-shadow: 0 0 10px #e9b77770; transition: .3s; }
+.promise:hover .icon { transform: translateY(-4px); border-color: #f6c59b; box-shadow: 0 0 22px #f5b67a35; }
+.promise h2 { font-size: clamp(8px, .82vw, 11px); font-weight: 500; white-space: nowrap; margin: 0 0 10px; color: #ffe8c9; }
+.promise p { font-size: clamp(9px, .92vw, 12px); line-height: 1.8; color: #e9d2b9; margin: 0; }
+.forgive-button { width: min(100%, 490px); border: 1px solid #ffb6a7; border-radius: 50px; padding: 16px 20px 18px; margin: 4px auto 16px; color: #ffe5c5; font: 600 clamp(23px, 2.7vw, 37px) 'Cormorant Garamond', serif; cursor: pointer; background: linear-gradient(100deg, #72292b, #a3423c 52%, #6c2024); box-shadow: 0 0 0 4px #ffb5a50d, 0 0 30px #e66d6048, inset 0 1px 13px #ffc7b94a; transition: transform .25s, box-shadow .25s; }
+.forgive-button span { font-family: serif; color: #ffd6c4; }
+.forgive-button:hover { transform: translateY(-3px); box-shadow: 0 0 0 5px #ffb5a514, 0 0 40px #e66d6070, inset 0 1px 13px #ffc7b94a; }
+.footer-line { font-size: clamp(10px, 1vw, 13px); color: #f8d6b3; margin: 8px 0 0; }
+.footer-line span { color: #ed7770; padding: 0 8px; font-size: 12px; }
+.still-life { min-height: 650px; height: min(82vh, 820px); position: relative; display: flex; align-items: center; justify-content: center; isolation: isolate; }
+.still-life::before { content: ""; position: absolute; inset: 5% -5% 0; z-index: -1; background: radial-gradient(ellipse, #a85c2b30, transparent 65%); }
+.bokeh { position: absolute; border-radius: 50%; background: #ffad4b; box-shadow: 0 0 25px 10px #a94d1b75; opacity: .75; }
+.bokeh-a { width: 11px; height: 11px; left: 10%; top: 17%; }
+.bokeh-b { width: 7px; height: 7px; left: 25%; bottom: 20%; }
+.bokeh-c { width: 14px; height: 14px; right: 8%; top: 13%; }
+.flowers { position: absolute; top: -1%; right: 6%; color: #b65e45; font-size: 44px; line-height: .75; transform: rotate(18deg); opacity: .7; text-shadow: 0 0 14px #9b452b; }
+.envelope { position: relative; width: min(88%, 560px); height: 470px; margin-top: 25px; filter: drop-shadow(0 24px 25px #0009); transform: rotate(-1deg); }
+.envelope-back { position: absolute; inset: 60px 0 0; background: linear-gradient(135deg, #d8ad78, #f2d5a9 45%, #a9794e); clip-path: polygon(0 0,100% 0,100% 100%,0 100%); border-radius: 6px; }
+.letter { position: absolute; left: 7%; right: 7%; top: 0; height: 76%; padding: 44px 12% 20px; background: repeating-linear-gradient(0deg, #efd3a7, #efd3a7 2px, #f3dbb7 3px); color: #3b2115; clip-path: polygon(0 5%, 91% 0,100% 95%, 8% 100%); transform: rotate(-4deg); box-shadow: 0 0 20px #5b2d18; font: italic clamp(15px, 1.55vw, 21px)/1.55 'Dancing Script', cursive; z-index: 1; }
+.letter p { margin: 8px 0; }
+.letter .to-you { font-size: 1.3em; margin-bottom: 12px; }
+.letter-heart { position: absolute; right: 13%; top: 25px; font: 40px 'Dancing Script'; color: #8d3e2e; }
+.letter-sign { position: absolute; right: 16%; bottom: 17px; font-size: 36px; color: #8d3e2e; }
+.envelope-front { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 65%; background: linear-gradient(145deg, #c99b67, #f2d4a4 48%, #b78351); clip-path: polygon(0 0,50% 48%,100% 0,100% 100%,0 100%); border-radius: 0 0 9px 9px; }
+.envelope-front::after { content: ""; position: absolute; inset: 2px; border: 1px solid #f8dfb1; opacity: .65; clip-path: polygon(0 0,50% 48%,100% 0,100% 100%,0 100%); }
+.wax-seal { position: absolute; z-index: 4; bottom: 17%; left: 50%; transform: translateX(-50%); width: 91px; height: 91px; border-radius: 50%; display: grid; place-items: center; font: 54px 'Cormorant Garamond', serif; color: #f0c69b; background: radial-gradient(circle at 35% 28%, #a64238, #5e1114 72%); border: 4px solid #79201e; box-shadow: inset 0 0 0 3px #bd6a4b, 0 6px 12px #39100d; }
+.rose { position: absolute; z-index: 5; right: -1%; bottom: 7%; font-size: clamp(80px, 10vw, 145px); filter: drop-shadow(0 10px 12px #0009); transform: rotate(-14deg); }
+.candle { position: absolute; z-index: -1; right: -2%; top: 25%; width: 80px; height: 170px; border-radius: 8px 8px 13px 13px; background: linear-gradient(90deg, #7a3c1b80, #e0a76565, #51200f80); box-shadow: 0 0 45px #ed8e3c38; }
+.candle-front { right: 2%; top: 55%; width: 66px; height: 118px; }
+.candle i { position: absolute; width: 13px; height: 28px; top: -30px; left: calc(50% - 6px); border-radius: 70% 30% 60% 40%; background: #fff3b6; box-shadow: 0 0 20px 10px #ff9e37, 0 0 48px 19px #ff6c1e65; transform: rotate(4deg); }
+.heart-box { position: absolute; right: 3%; bottom: 0; z-index: 6; background: linear-gradient(145deg, #5b3527, #27120e); border: 1px solid #b78a61; border-radius: 35% 35% 42% 42%; padding: 20px 28px; transform: rotate(10deg); text-align: center; color: #e8c39b; font: italic 29px/.85 'Dancing Script', cursive; box-shadow: 0 8px 15px #0008; }
+.heart-box span { font-size: 18px; }
+.petal { position: absolute; z-index: 6; width: 30px; height: 15px; border-radius: 100% 0 100% 0; background: linear-gradient(120deg, #8b171d, #d53a37); transform: rotate(30deg); box-shadow: 0 4px 7px #0006; }
+.petal-one { left: 12%; bottom: 6%; }.petal-two { left: 27%; bottom: 2%; transform: rotate(-25deg); }.petal-three { right: 29%; bottom: 10%; transform: rotate(60deg); }
+.modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 20px; background: #100503d9; backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: .3s; }
+.modal.open { opacity: 1; visibility: visible; }
+.modal-card { position: relative; width: min(100%, 500px); padding: 40px 32px 32px; text-align: center; border: 1px solid #d99b83; border-radius: 24px; background: linear-gradient(145deg, #3c1713, #1c0908); box-shadow: 0 0 60px #d66c5740; transform: translateY(18px); transition: .3s; }
+.modal.open .modal-card { transform: translateY(0); }
+.close-modal { position: absolute; top: 10px; right: 17px; color: #f7d7bc; background: transparent; border: 0; font-size: 30px; cursor: pointer; }
+.modal-heart { font-size: 53px; color: #f19b96; }
+.modal-kicker { text-transform: uppercase; letter-spacing: .2em; font-size: 10px; color: #e9b98e; }
+.modal-card h2 { font: 600 40px/1.05 'Cormorant Garamond', serif; margin: 12px 0; }
+.modal-message { font-size: 14px; line-height: 1.9; color: #f5dfca; }
+.modal-sign { font: 26px 'Dancing Script', cursive; color: #efb4a4; }
+.okay-button { background: #9d3f3d; color: #ffe8d0; border: 1px solid #e4a49a; border-radius: 30px; padding: 12px 20px; font: 15px 'Montserrat', sans-serif; cursor: pointer; }
+.toast { position: fixed; z-index: 30; left: 50%; bottom: 25px; transform: translate(-50%, 20px); padding: 13px 22px; border: 1px solid #e7ad98; border-radius: 30px; background: #55211f; color: #ffe8d2; box-shadow: 0 0 30px #e8796740; opacity: 0; pointer-events: none; transition: .3s; white-space: nowrap; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.floating-heart { position: fixed; z-index: 25; bottom: -25px; color: #ff9c9d; pointer-events: none; animation: float-up 2.6s ease-out forwards; text-shadow: 0 0 12px #f26b77; }
+@keyframes float-up { 0% { transform: translateY(0) scale(.6) rotate(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-105vh) scale(1.4) rotate(35deg); opacity: 0; } }
+@media (max-width: 900px) {
+  .page { grid-template-columns: 1fr; padding: 34px 6%; gap: 10px; }
+  .copy-panel { order: 1; }
+  .still-life { order: 2; min-height: 540px; height: 70vh; margin-top: -15px; }
+  .promise-grid { max-width: 600px; }
+  .promise h2 { font-size: 10px; }
+  .promise p { font-size: 11px; }
+  .envelope { width: min(88%, 510px); }
+}
+@media (max-width: 520px) {
+  .page { padding: 28px 5%; }
+  .eyebrow { letter-spacing: .25em; }
+  h1 { font-size: clamp(58px, 16vw, 82px); }
+  .subtitle { font-size: 27px; }
+  .promise-grid { grid-template-columns: repeat(3, 1fr); row-gap: 20px; }
+  .promise h2 { font-size: 9px; }
+  .promise p { font-size: 10px; }
+  .forgive-button { font-size: 27px; padding: 14px 10px; }
+  .still-life { min-height: 420px; height: 110vw; max-height: 560px; }
+  .envelope { width: 96%; height: 350px; }
+  .letter { padding: 34px 10% 12px; font-size: 15px; }
+  .letter-heart { top: 17px; font-size: 30px; }
+  .wax-seal { width: 68px; height: 68px; font-size: 40px; bottom: 16%; }
+  .candle { transform: scale(.75); transform-origin: top right; }
+  .rose { font-size: 85px; right: -3%; bottom: 4%; }
+  .heart-box { font-size: 23px; padding: 16px 20px; right: 0; }
+  .modal-card { padding: 34px 23px 26px; }
+  .modal-card h2 { font-size: 34px; }
+}
