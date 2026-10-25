@@ -118,3 +118,105 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(64px, 8.1vw, 118
   .modal-card { padding: 34px 23px 26px; }
   .modal-card h2 { font-size: 34px; }
 }
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+  }
+
+  .copy-panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 20px 12px;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: clamp(36px, 10vw, 48px);
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+
+  .intro p {
+    margin-bottom: 18px;
+  }
+
+  .promise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+  }
+
+  .promise {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .forgive-button {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .still-life {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 30px auto;
+    box-sizing: border-box;
+  }
+
+  .modal-card {
+    width: calc(100% - 32px);
+    max-width: 420px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .copy-panel {
+    padding: 16px 8px;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+
+  .promise-grid {
+    gap: 8px;
+  }
+
+  .promise h2 {
+    font-size: 11px;
+  }
+
+  .promise p {
+    font-size: 12px;
+  }
+}
